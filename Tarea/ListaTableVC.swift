@@ -25,8 +25,26 @@ class ListaTableVC: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        //Seccion 1
+        //Fila 4
+        
+        if indexPath.section == 2 && indexPath.row == 3 {
+            self.performSegue(withIdentifier: "siguiente", sender: self)
+            
+        }
+        
+        //Para hacer que visualmente no se vea que se selecciona las filas pero que internamente si se seleccione e inmediatamente se deseleccione una vez suelte el mouse hacer lo siguiente
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+    }
+    
+
     // MARK: - Table view data source
 
+    /*
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
@@ -36,6 +54,7 @@ class ListaTableVC: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 0
     }
+ */
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -89,45 +108,15 @@ class ListaTableVC: UITableViewController {
     */
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       
+       // let indexPaths: [IndexPath]! = tableView.indexPathsForSelectedRows
         
-        let indexPaths: [IndexPath]! = tableView.indexPathsForSelectedRows
-        
-        for n in indexPaths! {
+     //   for n in indexPaths! {
+       //     print("==========================")
+         //print(n)
+           // print("===================")
             
-            
-            
-        }
+        //}
     }
     
-    /*
- 
-     let indexPathNombre = IndexPath(row: 0 , section: 0)
-     
-     let primeraCelda = tableView.cellForRow(at: indexPathNombre)
-     
-     let indexPathCelular = IndexPath(row:1, section: 0)
-     
-     let segundaCelda = tableView.cellForRow(at: indexPathCelular)
-     
-     
-     
-     let nombCompleto = primeraCelda?.textLabel?.text
-     
-     let numeContacto = segundaCelda?.detailTextLabel?.text
-     
-     var reubicacion = ""
-     
-     if lblswitch.isOn {
-     reubicacion = "Si"
-     }else{
-     reubicacion = "No"
-     }
-     
-     let viewController = segue.destination as! ViewController2
-     
-     viewController.nombreCompleto = nombCompleto!
-     viewController.numeroContacto = numeContacto!
-     viewController.reubicacion = reubicacion
-     */
-
-}
+    }

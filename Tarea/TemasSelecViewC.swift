@@ -9,6 +9,9 @@
 import UIKit
 
 class TemasSelecViewC: UIViewController {
+    
+    
+    @IBOutlet weak var lblTemas: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -68,9 +68,9 @@
 				6BFB36FE1E47C602000712B5 /* Assets.xcassets */,
 				6BFB37001E47C602000712B5 /* LaunchScreen.storyboard */,
 				6BFB37031E47C602000712B5 /* Info.plist */,
+				6BFB370F1E4833C4000712B5 /* ListaTableVC.swift */,
 				6BFB370B1E4816FA000712B5 /* NavegacionViewC.swift */,
 				6BFB370D1E481A97000712B5 /* AvanceViewC.swift */,
-				6BFB370F1E4833C4000712B5 /* ListaTableVC.swift */,
 				6BFB37111E4833F8000712B5 /* TemasSelecViewC.swift */,
 			);
 			path = Tarea;
