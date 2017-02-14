@@ -10,12 +10,19 @@ import UIKit
 
 class TemasSelecViewC: UIViewController {
     
+    var sms = ""
+    
     
     @IBOutlet weak var lblTemas: UILabel!
 
+    @IBAction func btnRegresar(_ sender: UIButton) {
+    self.dismiss(animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+       lblTemas.text = sms
         // Do any additional setup after loading the view.
     }
 

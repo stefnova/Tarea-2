@@ -27,17 +27,14 @@ class ListaTableVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        //Seccion 1
-        //Fila 4
         
         if indexPath.section == 2 && indexPath.row == 3 {
+            
+            tableView.deselectRow(at: indexPath, animated: true)
             self.performSegue(withIdentifier: "siguiente", sender: self)
             
         }
         
-        //Para hacer que visualmente no se vea que se selecciona las filas pero que internamente si se seleccione e inmediatamente se deseleccione una vez suelte el mouse hacer lo siguiente
-        
-        tableView.deselectRow(at: indexPath, animated: true)
         
     }
     
@@ -109,14 +106,26 @@ class ListaTableVC: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        
-       // let indexPaths: [IndexPath]! = tableView.indexPathsForSelectedRows
         
-     //   for n in indexPaths! {
-       //     print("==========================")
-         //print(n)
-           // print("===================")
+        var mensaje = ""
+        
+        for i in 0..<tableView.numberOfSections{
+            for o in 0..<tableView.numberOfRows(inSection: i){
+                let cell = IndexPath(row: o, section:i)
+                let celda = tableView.cellForRow(at: cell)
+                if celda?.isSelected == true{
+                    mensaje += "- "+(celda?.textLabel?.text)! + " \n"
+            }
             
-        //}
+            }
+        }
+        
+        let vC = segue.destination as! TemasSelecViewC
+        
+        vC.sms = mensaje
+       
+        
+        
     }
     
     }
